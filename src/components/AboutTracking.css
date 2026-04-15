@@ -1,0 +1,54 @@
+/* Base settings for AboutTracking */
+.about-tracking-section {
+  background: #f0f7ff;
+  padding: 5rem 20px;
+}
+
+.about-tracking-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-logo-side, .about-text-side {
+  flex: 1;
+}
+
+.large-logo-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.about-text-side h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+}
+
+.about-desc {
+  margin-bottom: 2rem;
+  color: #475569;
+}
+
+.about-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+@media (max-width: 900px) {
+  .about-tracking-container {
+    flex-direction: column;
+  }
+}

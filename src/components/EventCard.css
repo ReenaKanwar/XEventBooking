@@ -1,0 +1,301 @@
+/* Vertical layout defaults */
+.event-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.event-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-rating {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.event-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.event-details h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+}
+
+.event-location {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.event-actions {
+  display: flex;
+  margin-top: auto;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 12px;
+}
+
+/* Horizontal Layout for Search Page */
+.event-card-horizontal-container {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.event-card-horizontal-container:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.event-card-horizontal {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 2rem;
+}
+
+.event-card-icon-box {
+  background: #3b82f6;
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.star-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.event-horizontal-details {
+  flex: 1;
+}
+
+.event-horizontal-details h3 {
+  color: #3b82f6;
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.event-location-bold {
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.event-address-small {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.event-pricing-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.badge-free {
+  color: #10b981;
+  font-weight: 800;
+}
+
+.strikethrough-price {
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.registration-label {
+    color: #475569;
+}
+
+.rating-badge-container {
+  margin-top: 0.8rem;
+}
+
+.rating-badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: #10b981;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.event-horizontal-action {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.available-text {
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.inline-book-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn-active {
+    background-color: #1d4ed8;
+}
+
+/* Expandable Calendar Area */
+.inline-calendar-area {
+  background-color: #fafafa;
+  border-top: 1px dotted #e2e8f0;
+  padding: 2rem;
+}
+
+.date-tabs {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.date-tab {
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.date-tab.selected-date {
+  color: #3b82f6;
+}
+
+.date-tab.selected-date::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #3b82f6;
+}
+
+.date-label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.slots-label {
+    font-size: 0.8rem;
+    color: #10b981;
+    margin-top: 2px;
+}
+
+.time-slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.time-period-row {
+  display: flex;
+  align-items: center;
+}
+
+.time-period-label {
+  width: 120px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.time-pills {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.time-pill {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid #3b82f6;
+  background: white;
+  color: #3b82f6;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.time-pill.selected-pill {
+  background: #3b82f6;
+  color: white;
+}
+
+.time-pill:hover {
+    background: #eff6ff;
+}
+
+.calendar-booking-action .book-btn {
+  background: #ef4444; /* Design has Red/Orange for book btn sometimes, but let's stick to blue or follow user's "primary-btn" */
+}
+
+@media (max-width: 768px) {
+  .event-card-horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

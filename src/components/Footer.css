@@ -1,0 +1,82 @@
+/* Footer Section */
+.footer-section {
+  background: #3b82f6; /* Vibrant light blue matching design */
+  color: white;
+  padding: 4rem 20px 2.5rem 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.footer-links-grid {
+  display: flex;
+  gap: 6rem;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  list-style-type: '› ';
+  padding-left: 5px;
+}
+
+.footer-column ul li a {
+  color: white;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.footer-column ul li a:hover {
+  opacity: 1;
+}
+
+.footer-bottom {
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 2rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,123 @@
+/* AppDownload Section */
+.app-download-section {
+  background: #f0f7ff;
+  padding: 5rem 20px;
+  overflow: hidden;
+}
+
+.app-download-container {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1100px;
+}
+
+.app-mockup {
+  flex: 1;
+  position: relative;
+}
+
+.phone-hand-img {
+  max-width: 450px;
+  transform: rotate(-5deg);
+  transition: transform 0.3s;
+}
+
+.phone-hand-img:hover {
+  transform: rotate(0deg);
+}
+
+.app-content {
+  flex: 1.2;
+}
+
+.app-content-header h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: #1e293b;
+}
+
+.highlight-text {
+  color: #3b82f6;
+}
+
+.app-input-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.app-input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 2.5rem;
+}
+
+.phone-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding-left: 1.2rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.country-code {
+  color: #64748b;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+
+.app-input {
+  flex: 1;
+  padding: 15px 16px 15px 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+.app-send-btn {
+  background: #3b82f6;
+  color: white;
+  padding: 0 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.app-store-badges {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.store-badge {
+  height: 48px;
+  transition: transform 0.2s;
+}
+
+.store-badge:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .app-download-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .app-mockup {
+    justify-content: center;
+  }
+  .app-input-group {
+      flex-direction: column;
+  }
+  .app-content-header h2 {
+      font-size: 2.5rem;
+  }
+}
