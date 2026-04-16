@@ -6,7 +6,7 @@ import AboutTracking from './components/AboutTracking';
 import AppDownload from './components/AppDownload';
 import Home from './pages/Home';
 import Events from './pages/Events';
-import Booking from './pages/Booking';
+
 import MyBookings from './pages/MyBookings';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Events />} />
-        <Route path="/booking/:id" element={<Booking />} />
+
         <Route path="/mybooking" element={<MyBookings />} />
       </Routes>
       {showAbout && <AboutTracking />}
