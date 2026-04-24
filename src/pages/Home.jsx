@@ -18,6 +18,8 @@ const Home = () => {
   const [selectedCity, setSelectedCity] = useState('');
   const [loadingStates, setLoadingStates] = useState(true);
   const [loadingCities, setLoadingCities] = useState(false);
+  const [isStateOpen, setIsStateOpen] = useState(false);
+  const [isCityOpen, setIsCityOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -107,35 +109,44 @@ const Home = () => {
           <div className="search-box-card">
             
             <form className="search-dropdowns-row" onSubmit={handleSearch}>
-              <div className="search-input-group">
+              <div className="search-input-group" style={{ position: 'relative' }}>
                 <MapPin className="input-icon" size={20} />
-                <select 
+                <div 
                   id="state" 
-                  value={selectedState} 
-                  onChange={(e) => setSelectedState(e.target.value)}
-                  required
+                  className="custom-select"
+                  onClick={() => setIsStateOpen(!isStateOpen)}
+                  style={{ width: '100%', padding: '10px 10px 10px 35px', cursor: 'pointer', border: '1px solid #e2e8f0', borderRadius: '8px', minHeight: '42px', display: 'flex', alignItems: 'center', background: 'white' }}
                 >
-                  <option value="">State</option>
-                  {states.map((state, index) => (
-                    <option key={index} value={state}>{state}</option>
-                  ))}
-                </select>
+                  {selectedState || 'State'}
+                </div>
+                {isStateOpen && (
+                  <ul className="custom-options" style={{ position: 'absolute', top: '100%', left: 0, right: 0, background: 'white', border: '1px solid #e2e8f0', borderRadius: '8px', zIndex: 10, maxHeight: '200px', overflowY: 'auto', listStyle: 'none', padding: 0, margin: '4px 0 0 0', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}>
+                    <li onClick={() => { setSelectedState(''); setIsStateOpen(false); }} style={{ padding: '8px 15px', cursor: 'pointer', borderBottom: '1px solid #f1f5f9' }}>State</li>
+                    {states.map((state, index) => (
+                      <li key={index} onClick={() => { setSelectedState(state); setIsStateOpen(false); }} style={{ padding: '8px 15px', cursor: 'pointer', borderBottom: '1px solid #f1f5f9' }}>{state}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
-              <div className="search-input-group">
+              <div className="search-input-group" style={{ position: 'relative' }}>
                 <MapPin className="input-icon" size={20} />
-                <select 
+                <div 
                   id="city" 
-                  value={selectedCity} 
-                  onChange={(e) => setSelectedCity(e.target.value)}
-                  disabled={!selectedState || loadingCities}
-                  required
+                  className={`custom-select ${!selectedState || loadingCities ? 'disabled' : ''}`}
+                  onClick={() => (!selectedState || loadingCities) ? null : setIsCityOpen(!isCityOpen)}
+                  style={{ width: '100%', padding: '10px 10px 10px 35px', cursor: (!selectedState || loadingCities) ? 'not-allowed' : 'pointer', border: '1px solid #e2e8f0', borderRadius: '8px', minHeight: '42px', display: 'flex', alignItems: 'center', background: (!selectedState || loadingCities) ? '#f8fafc' : 'white', color: (!selectedState || loadingCities) ? '#94a3b8' : 'inherit' }}
                 >
-                  <option value="">{loadingCities ? 'Loading...' : 'City'}</option>
-                  {cities.map((city, index) => (
-                    <option key={index} value={city}>{city}</option>
-                  ))}
-                </select>
+                  {loadingCities ? 'Loading...' : (selectedCity || 'City')}
+                </div>
+                {isCityOpen && (
+                  <ul className="custom-options" style={{ position: 'absolute', top: '100%', left: 0, right: 0, background: 'white', border: '1px solid #e2e8f0', borderRadius: '8px', zIndex: 10, maxHeight: '200px', overflowY: 'auto', listStyle: 'none', padding: 0, margin: '4px 0 0 0', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}>
+                    <li onClick={() => { setSelectedCity(''); setIsCityOpen(false); }} style={{ padding: '8px 15px', cursor: 'pointer', borderBottom: '1px solid #f1f5f9' }}>City</li>
+                    {cities.map((city, index) => (
+                      <li key={index} onClick={() => { setSelectedCity(city); setIsCityOpen(false); }} style={{ padding: '8px 15px', cursor: 'pointer', borderBottom: '1px solid #f1f5f9' }}>{city}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               <button 

@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Events />} />
 
-        <Route path="/mybooking" element={<MyBookings />} />
+        <Route path="/my-bookings" element={<MyBookings />} />
       </Routes>
       {showAbout && <AboutTracking />}
       <AppDownload />

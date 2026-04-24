@@ -72,7 +72,7 @@ const EventCard = ({ event, layout = 'vertical' }) => {
       
       // Navigate slightly after to ensure storage is committed
       setTimeout(() => {
-        navigate('/mybooking');
+        navigate('/my-bookings');
       }, 100);
     } catch (error) {
       console.error("Error saving booking:", error);
@@ -161,7 +161,7 @@ const EventCard = ({ event, layout = 'vertical' }) => {
                      <div className="time-slots-container">
                          {timeCategories.map(period => (
                              <div className="time-period-row" key={period}>
-                                 <div className="time-period-label">{period}</div>
+                                 <p className="time-period-label">{period}</p>
                                  <div className="time-pills">
                                      {mockTimes[period].map(time => (
                                          <button 
