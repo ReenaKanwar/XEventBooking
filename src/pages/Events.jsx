@@ -118,9 +118,9 @@ const Events = () => {
                   <Search className="input-icon" size={16} />
                   <div 
                     id="city" 
-                    className={`custom-select ${!selectedState || loadingCities ? 'disabled' : ''}`}
-                    onClick={() => (!selectedState || loadingCities) ? null : setIsCityOpen(!isCityOpen)}
-                    style={{ width: '100%', padding: '10px 10px 10px 35px', cursor: (!selectedState || loadingCities) ? 'not-allowed' : 'pointer', border: '1px solid #e2e8f0', borderRadius: '8px', minHeight: '42px', display: 'flex', alignItems: 'center', background: (!selectedState || loadingCities) ? '#f8fafc' : 'white', color: (!selectedState || loadingCities) ? '#94a3b8' : 'inherit' }}
+                    className={`custom-select ${!selectedState ? 'disabled' : ''}`}
+                    onClick={() => (!selectedState) ? null : setIsCityOpen(!isCityOpen)}
+                    style={{ width: '100%', padding: '10px 10px 10px 35px', cursor: (!selectedState) ? 'not-allowed' : 'pointer', border: '1px solid #e2e8f0', borderRadius: '8px', minHeight: '42px', display: 'flex', alignItems: 'center', background: (!selectedState) ? '#f8fafc' : 'white', color: (!selectedState) ? '#94a3b8' : 'inherit' }}
                   >
                     {loadingCities ? 'Loading...' : (selectedCity || 'City')}
                   </div>
